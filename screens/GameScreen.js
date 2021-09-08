@@ -18,16 +18,18 @@ const randomNumber = (min, max, exclude) => {
 const GameScreen = (props) => {
 
     const [currentGuess, setCurrentGuess] = useState(randomNumber(1, 100, props.userChoice));
+    const [rounds, setRounds] = useState(0);
 
     const currentMin = useRef(1);
     const currentMax = useRef(100);
 
+    const { userChoice, onGameOver } = props;
 
     useEffect(() => {
-        if (currentGuess === props.userChoice) {
-
+        if (currentGuess === userChoice) {
+            onGameOver(rounds);
         }
-    })
+    }, [currentGuess, userChoice, onGameOver])
 
 
     const nextGuessHandler = (direction) => {
@@ -42,6 +44,7 @@ const GameScreen = (props) => {
         }
         const nextNumber = randomNumber(currentMin.current, currentMax.current, currentGuess);
         setCurrentGuess(nextNumber);
+        setRounds(currentRounds => currentRounds + 1);
     }
 
     return (

@@ -8,8 +8,6 @@ import NumberContainer from '../components/NumberContainer';
 
 const StartInput = (props) => {
 
-    console.log(props)
-
     const [userValue, setUserValue] = useState('');
     const [confirmed, setConfirmed] = useState(false);
     const [selectedNumber, setSelectedNumber] = useState();
