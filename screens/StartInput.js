@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         marginVertical: 10,
+        fontFamily: 'open-sans-bold',
     },
     inputContainer: {
         width: '70%',
