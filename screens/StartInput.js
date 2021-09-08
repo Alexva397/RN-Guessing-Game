@@ -6,7 +6,9 @@ import colors from '../constants/colors';
 import Input from '../components/Input';
 import NumberContainer from '../components/NumberContainer';
 
-const StartInput = () => {
+const StartInput = (props) => {
+
+    console.log(props)
 
     const [userValue, setUserValue] = useState('');
     const [confirmed, setConfirmed] = useState(false);
@@ -38,12 +40,13 @@ const StartInput = () => {
     let confirmedOutput;
 
     if (confirmed) {
-        confirmedOutput = 
+        confirmedOutput = (
             <Card>
                 <Text>You Have Chosen: </Text>
                 <NumberContainer>{selectedNumber}</NumberContainer>
-                <Button title='Start' color={colors.primary}/>
+                <Button title='Start' onPress={() => props.onGameStart(selectedNumber)} color={colors.primary}/>
             </Card>
+        );
     }
 
     return (
