@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, Text, StyleSheet, Button } from 'react-native';
+import { View, Image, Text, StyleSheet, Button, Dimensions } from 'react-native';
 import BodyText from '../components/BodyText';
 import TitleText from '../components/TitleText';
 import colors from '../constants/colors';
@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     image: {
-        width: '80%',
+        width: Dimensions.get('window').width * 0.7,
+        height: Dimensions.get('window').width * 0.7,
         height: 300,
         borderRadius: 20,
     },
