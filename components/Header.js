@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import colors from '../constants/colors';
+import TitleText from './TitleText';
 
 const Header = (props) => {
     return (
         <View style={styles.headerContainer}>
-            <Text style={styles.title}>{props.title}</Text>
+            <TitleText>{props.title}</TitleText>
         </View>
     );
 };
@@ -21,11 +22,4 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    title: {
-        color: '#000000',
-        fontSize: 20,
-        fontFamily: 'open-sans-bold',
-    },
-
-
 });
